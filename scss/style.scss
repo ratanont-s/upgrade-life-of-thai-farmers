@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'DB Helvethaica X Bd';
+    src: url('../fonts/DBHelvethaicaX-Bd.woff2') format('woff2'),
+        url('../fonts/DBHelvethaicaX-Bd.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DB Helvethaica X Med';
+    src: url('../fonts/DBHelvethaicaX-Med.woff2') format('woff2'),
+        url('../fonts/DBHelvethaicaX-Med.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'DB Helvethaica X Med', serif;
+    line-height: 1;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'DB Helvethaica X Bd', serif;
+        line-height: 1;
+    }
+}
+
+$green-1: #4F7A5A;
+$green-2: #E4EBE3;
+$green-3: #009245;
+$green-4: #EDFFEB;
+$green-5: #C3EBBF;
+$grey-1: #707070;
+$black: #000000;
+
+.top {
+    &-img {
+        width: 100%;
+    }
+
+    &-body {
+        color: $green-1;
+        background-color: $green-2;
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    &-text {
+        margin-bottom: 0;
+    }
+
+    @media (min-width: 992px) {
+        &-body {
+            padding: 70px 0;
+        }
+
+        &-text {
+            font-size: 40px;
+        }
+    }
+}
+
+.project {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    padding: 40px 0 30px;
+
+    &:nth-child(odd) {
+        text-align: right;
+
+        .project-heading {
+            &::before {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+
+    &-link {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    &-img {
+        width: 100%;
+    }
+
+    &-heading {
+        position: relative;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50%;
+            border-bottom: 2px solid $grey-1;
+        }
+    }
+
+    &-title {
+        font-size: 29px;
+        color: $green-3;
+    }
+
+    &-subtitle,
+    &-name {
+        font-size: 22px;
+    }
+
+    &-subtitle {
+        margin-bottom: 0;
+    }
+
+    &-text {
+        font-size: 19px;
+    }
+
+    &-download {
+        display: inline-block;
+        text-align: center;
+        font-size: 18px;
+        text-decoration: none;
+        color: $black;
+
+        img {
+            filter: drop-shadow(0px 3px 6px rgba($black, .3));
+        }
+
+        p {
+            margin-top: .25em;
+            text-shadow: 0px 3px 6px rgba($black, .3);
+        }
+
+        &:hover {
+            color: $green-3;
+
+            img {
+                filter: saturate(1.1) brightness(1.1);
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        background-color: $green-4;
+        background-image: none !important;
+
+        &:nth-child(odd) {
+            background-color: $green-5;
+        }
+    }
+
+    @media (min-width: 992px) {
+        padding: 60px 0 50px;
+
+        &-title {
+            font-size: 60px;
+        }
+
+        &-subtitle,
+        &-name {
+            font-size: 47px;
+        }
+
+        &-text {
+            font-size: 40px;
+            height: 100%;
+        }
+
+        &-download {
+            font-size: 32px;
+        }
+    }
+}
