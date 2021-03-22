@@ -54,7 +54,12 @@ $black: #000000;
     &-text {
         margin-bottom: 0;
     }
-
+    @media (max-width: 991px){
+        &-img{
+            min-height: 225px;
+            object-fit: cover;
+        }
+    }
     @media (min-width: 992px) {
         &-body {
             padding: 70px 0;
